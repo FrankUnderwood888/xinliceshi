@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>心理测试</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="start-screen" class="screen">
+    <h1>🧠 人格心理测试</h1>
+    <p>共10题，请根据第一反应选择最符合你的选项。</p>
+    <button id="start-btn">开始测试</button>
+  </div>
+  <div id="quiz-screen" class="screen hide">
+    <div id="progress-bar"><div id="progress-fill"></div></div>
+    <p id="question-num"></p>
+    <h2 id="question-text"></h2>
+    <div id="options"></div>
+  </div>
+  <div id="result-screen" class="screen hide">
+    <h1 id="result-title"></h1>
+    <div id="result-badge"></div>
+    <div id="result-desc"></div>
+    <div id="result-detail"></div>
+    <button id="restart-btn">重新测试</button>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
