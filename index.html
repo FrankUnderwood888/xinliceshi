@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="通过10个日常互动情境，观察关系中的健康沟通、控制、情绪操纵与回避拉扯倾向。">
-  <title>关系中的黑暗模式测试</title>
+  <meta name="description" content="进入暗影人格探索系统，通过10个情境问题观察人在欲望、压力、利益和冲突面前可能展现的隐藏决策模式。">
+  <title>暗影人格探索系统</title>
   <!-- 连接页面样式文件 -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,23 +12,55 @@
   <!-- 页面主体：让首页内容居中显示 -->
   <main class="page">
     <!-- 测试首页卡片 -->
-    <section class="intro-card" id="homePage">
-      <p class="eyebrow">自我观察测试</p>
-      <h1>关系中的黑暗模式测试</h1>
-      <p class="subtitle">通过日常互动情境，观察关系中的沟通、边界与风险模式。</p>
+    <section class="intro-card home-card" id="homePage">
+      <div class="archive-strip" aria-hidden="true">
+        <span>SHADOW PROFILE SYSTEM</span>
+        <span>FILE SP-001</span>
+      </div>
+      <div class="home-glow" aria-hidden="true">
+        <span class="glow-ring ring-one"></span>
+        <span class="glow-ring ring-two"></span>
+        <span class="glow-ring ring-three"></span>
+        <span class="glow-core"></span>
+      </div>
+      <p class="eyebrow">暗影人格探索系统</p>
+      <h1>你真的了解自己的隐藏人格吗？</h1>
+      <p class="subtitle">在欲望、压力、利益和冲突面前，<br>你会展现怎样的一面？</p>
+
+      <div class="test-info" aria-label="测试信息">
+        <div>
+          <strong>暗影人格探索系统</strong>
+          <span>人格档案入口</span>
+        </div>
+        <div>
+          <strong>10个情境问题</strong>
+          <span>快速选择</span>
+        </div>
+        <div>
+          <strong>约3分钟完成</strong>
+          <span>生成观察结果</span>
+        </div>
+      </div>
+
+      <div class="system-status" aria-label="系统状态">
+        <span>实验入口已开启</span>
+        <span>样本记录待初始化</span>
+        <span>人格档案生成模块待命</span>
+      </div>
+
       <p class="note">本测试仅用于关系互动模式的自我观察，不构成心理诊断、法律意见或专业结论。请结合具体事件、行为频率和长期影响进行判断。</p>
-      <button class="start-button" type="button">开始测试</button>
+      <button class="start-button" type="button">开始探索</button>
     </section>
 
     <!-- 答题页面：默认隐藏，点击“开始测试”后显示 -->
     <section class="intro-card quiz-card is-hidden" id="quizPage">
-      <p class="eyebrow">关系模式观察</p>
+      <p class="eyebrow">情境决策</p>
       <div class="progress-info" id="progressText">第 1 题 / 共 10 题</div>
       <div class="progress-bar" aria-label="当前进度 10%">
         <div class="progress-fill" id="progressFill"></div>
       </div>
 
-      <h2 class="question-title" id="questionTitle">当你没有及时回复消息时，对方通常会怎样反应？</h2>
+      <h2 class="question-title" id="questionTitle">如果有人一直没有回复你的消息，你的第一反应更接近哪一种？</h2>
 
       <div class="option-list">
         <button class="option-button" type="button" data-option-index="0">A. 正常等待，之后自然交流</button>
@@ -36,6 +68,8 @@
         <button class="option-button" type="button" data-option-index="2">C. 突然变得冷淡，让你猜测他的情绪</button>
         <button class="option-button" type="button" data-option-index="3">D. 表面上说没关系，但之后会反复提起</button>
       </div>
+
+      <p class="analysis-status" id="analysisStatus" aria-live="polite">等待你的选择</p>
 
       <div class="navigation-buttons">
         <button class="nav-button prev-button" id="prevButton" type="button" disabled>上一题</button>
@@ -45,15 +79,43 @@
 
     <!-- 结果页面：第10题完成后显示 -->
     <section class="intro-card complete-card is-hidden" id="completePage">
-      <div class="result-visual" id="resultVisual" aria-hidden="true">
-        <span class="visual-shape shape-one"></span>
-        <span class="visual-shape shape-two"></span>
-        <span class="visual-shape shape-three"></span>
-        <span class="visual-shape shape-four"></span>
+      <div class="result-loader" id="resultLoader" aria-live="polite">
+        <div class="loader-orbit" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p class="eyebrow">暗影人格档案生成系统</p>
+        <h1>正在生成档案</h1>
+        <div class="loader-steps">
+          <span>正在解析你的选择</span>
+          <span>读取行为模式</span>
+          <span>建立人格档案</span>
+        </div>
       </div>
-      <p class="eyebrow">关系模式观察结果</p>
-      <h1 id="overallTitle">综合状态</h1>
-      <p class="result-lead" id="overallDescription">你的结果将由四个维度共同生成。</p>
+
+      <div class="result-content is-hidden" id="resultContent">
+        <div class="result-visual" id="resultVisual" aria-hidden="true">
+          <span class="visual-shape shape-one"></span>
+          <span class="visual-shape shape-two"></span>
+          <span class="visual-shape shape-three"></span>
+          <span class="visual-shape shape-four"></span>
+        </div>
+        <p class="eyebrow">暗影人格档案</p>
+        <p class="shadow-level" id="shadowLevel">Level 1</p>
+        <h1 id="overallTitle">综合状态</h1>
+        <p class="result-lead" id="overallDescription">你的结果将由四个维度共同生成。</p>
+
+        <section class="result-section profile-summary">
+          <h2>档案摘要</h2>
+          <p class="result-tag" id="shadowProfileName">清醒观察者</p>
+          <p id="profileStrengthDescription">等待生成暗影人格档案。</p>
+        </section>
+
+        <section class="result-section">
+          <h2>五维分析</h2>
+          <div class="dimension-list shadow-dimensions" id="shadowDimensions"></div>
+        </section>
 
       <section class="result-section">
         <h2>保护因素</h2>
@@ -117,8 +179,18 @@
       </section>
 
       <section class="result-section">
-        <h2>结果解释</h2>
-        <p>你的结果由四个维度共同组成。某个维度较高不代表可以直接定义一个人或一段关系，需要结合行为出现的频率、持续时间、具体情境和对生活产生的影响判断。</p>
+        <h2>优势描述</h2>
+        <p id="profileStrengthText">等待生成。</p>
+      </section>
+
+      <section class="result-section">
+        <h2>潜在风险</h2>
+        <p id="profileRiskText">等待生成。</p>
+      </section>
+
+      <section class="result-section">
+        <h2>建议方向</h2>
+        <p id="profileAdviceText">等待生成。</p>
       </section>
 
       <p class="disclaimer">本测试仅用于关系互动模式的自我观察，不构成心理诊断、法律意见或专业结论。请结合具体事件、行为频率和长期影响进行判断。</p>
@@ -129,6 +201,7 @@
         <button class="complete-button primary-action" id="restartButton" type="button">重新测试</button>
       </div>
       <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+      </div>
     </section>
   </main>
 
